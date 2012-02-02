@@ -6,9 +6,10 @@ gem 'rails', '3.1.3'
 gem 'pg'
 gem "compass", ">= 0.11.6"
 gem "haml"
+gem 'gravatar_image_tag', '0.1.0'
 
 group :development do
-  gem 'rspec-rails'
+  gem "rspec-rails", "~> 2.8.1"
   gem 'annotate', '~> 2.4.1.beta' 
 end
 
@@ -16,6 +17,7 @@ group :test do
   gem 'sqlite3'
   gem 'rspec'
   gem 'webrat'
+  gem 'factory_girl_rails', '1.0'
 end
 # Gems used only for assets and not required
 # in production environments by default.
