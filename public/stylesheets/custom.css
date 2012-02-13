@@ -3,7 +3,7 @@
 }
 
 body{
-	background: #cff;
+	background: #1574ea;
 }
 
 header{
@@ -12,18 +12,19 @@ header{
 
 header img {
 	padding: 1em;
-	background: #fff;
+	background: #bec9e1;
 }
 
 section{
 	margin-top: 1em;
 	font-size: 120%;
 	padding: 20px;
-	background: #fff;
+	background: #bec9e1;
 }
 
 section h1{
 	font-size: 200%;
+	color: white;
 }
 
 /* Links */
@@ -44,7 +45,7 @@ nav {
 }
 
 nav{
-	background-color: white;
+	background-color: #bec9e1;
 	padding: 0 0.7em;
 	white-space: nowrap;
 }
@@ -65,7 +66,7 @@ nav ul li{
  }
 
 nav ul li a:visited {
-	color: #09c;
+	color: white;
 }
 
 nav ul li a:hover {
@@ -132,4 +133,43 @@ td.sidebar{
 .profie img.gravatar{
 	border: 1px solid #999;
 	margin-bottom: -15px;
+}
+
+div.field div.action{
+	margin-bottom: 10px;
+}
+
+
+.field_with_errors label {
+  color: red;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
 }

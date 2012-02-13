@@ -7,6 +7,8 @@ gem 'pg'
 gem "compass", ">= 0.11.6"
 gem "haml"
 gem 'gravatar_image_tag', '0.1.0'
+gem 'i18n'
+gem 'magic_encoding'
 
 group :development do
   gem "rspec-rails", "~> 2.8.1"

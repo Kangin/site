@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
    attr_accessor :password
    attr_accessible(:name, :email, :password, :password_confirmation)
@@ -5,7 +6,8 @@ class User < ActiveRecord::Base
    email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
    
    validates(:name, :presence => true,
-                    :length => {:maximum => 50})
+                    :length => {:maximum => 50},
+                     :uniqueness => {:case_sensitive => false})
    validates(:email, :presence => true,
                      :format => { :with => email_regex},
                      :uniqueness => {:case_sensitive => false})
@@ -20,6 +22,7 @@ class User < ActiveRecord::Base
    def has_password?(submitted_password)
       encrypted_password == encrypt(submitted_password)
    end
+
    
    def self.authenticate(email, submitted_password)
      user = find_by_email(email)
