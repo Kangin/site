@@ -74,7 +74,12 @@ describe UsersController do
         @attr = { :name => "New User", :email => "user@example.com",
                   :password => "foobar", :password_confirmation => "foobar" }
       end
-
+      
+      it "devrait identifier l'utilisateur" do
+        post :create, :user => @attr
+        controller.should be_signed_in
+      end
+      
       it "should create a user" do
         lambda do
           post :create, :user => @attr

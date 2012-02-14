@@ -34,5 +34,30 @@ describe "Users" do
         end.should change(User, :count).by(1)
       end 
     end
+    describe "identification/déconnexion" do
+
+    describe "l'échec" do
+      it "ne devrait pas identifier l'utilisateur" do
+        visit signin_path
+        fill_in "eMail",    :with => ""
+        fill_in "Mot de passe", :with => ""
+        click_button
+        response.should have_selector("div.flash.error", :content => "invalide")
+      end
+    end
+
+    describe "le succès" do
+      it "devrait identifier un utilisateur puis le déconnecter" do
+        user = Factory(:user)
+        visit signin_path
+        fill_in "eMail",    :with => user.email
+        fill_in "Mot de passe", :with => user.password
+        click_button
+        controller.should be_signed_in
+        click_link "Déconnexion"
+        controller.should_not be_signed_in
+      end
+    end
+  end
   end
 end
